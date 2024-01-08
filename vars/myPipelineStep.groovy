@@ -1,3 +1,5 @@
+// vars/myPipelineStep.groovy
+
 def call() {
     pipeline {
         agent any
@@ -6,7 +8,7 @@ def call() {
             stage('Git Checkout') {
                 steps {
                     script {
-                        org.tinkucloud.Utils.gitCheckout('main', 'git_token', 'https://github.com/tinkusaini13/uber.git')
+                        org.tinkusaini.Utils.gitCheckout('main', 'git_token', 'https://github.com/tinkusaini13/uber.git')
                     }
                 }
             }
@@ -14,11 +16,10 @@ def call() {
             stage('Maven build') {
                 steps {
                     script {
-                        org.tinkucloud.Utils.mavenBuild()
+                        org.tinkusaini.Utils.mavenBuild()
                     }
                 }
             }
         }
     }
 }
-
