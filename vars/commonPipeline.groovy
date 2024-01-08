@@ -9,13 +9,7 @@ def call() {
                     sh 'mvn clean package'
                 }
             }
-            stage('Test') {
-                steps {
-                    echo 'Testing...'
-                    // Your test steps here
-                }
-            }
-            // Add more stages as needed
+
         }
     }
 }
